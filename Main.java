@@ -48,6 +48,16 @@ class Main
 
   //Start coding here!!
   /*recursiveInterestCalc method uses recursion to calulate the new balance in your investment account*/
-  
+  public static double recursiveInterestCalc(double amount, double rate, int years) {
+    // Base case: if year == 0
+    if (years == 0) {
+      return amount;
+    }
+    
+    // Recursive case: perform compound interest calculation to determine the newBalance
+    double newBalance = amount + (amount * rate);
+    // make recursive call with the newBalance, rate, and year decremented by 1 as the arguments
+    return recursiveInterestCalc(newBalance, rate, years - 1);
+  }
 
 }
